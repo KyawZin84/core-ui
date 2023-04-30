@@ -1,0 +1,41 @@
+add new => new folder => example.js
+
+write code in example.js
+
+eg add new page
+  welcome folder in src folder
+welcome.js in welcome folder
+
+ { path: `/welcome`, name: 'NewMenu', component: Welcome}, in routes.js
+============================
+put in navbar
+ {
+      _tag: 'CSidebarNavItem',
+      name: 'Welcome',
+      to: '/welcome',
+  }, in nav.js
+========================
+add in App.js
+//pages
+const Welcome = React.lazy(() => import('./views/welcome/welcome'));
+
+class App extends Component{
+ render () {
+	<HashRounter>
+		<Switch>
+	put bottom-->	<Route path="/menu/welcome" name="Welcome" render={props => <Welcome {...props}/>} />
+===============================================================================
+
+new page without navbar
+LoginReact.js in LoginReact folder in src
+
+add in App.js
+const LoginReact = React.lazy(() => import('./views/LoginReact/LoginReact'));
+
+<HashRounter>
+<switch>
+put top --><Route exact path="/loginReact" name="LoginReact" render={props => <LoginReact {...props}/>} />
+ 
+http://localhost:3000/#/loginReact in searchbar
+
+
